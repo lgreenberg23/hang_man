@@ -1,7 +1,5 @@
 class Dictionary
-	def self.words
-		# return ["hello"]
-		dictionary2 = 
+  DICTIONARY = 
 			"mine
 			separate
 			employ

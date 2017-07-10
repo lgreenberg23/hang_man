@@ -17,7 +17,7 @@ class Game
 		@word = ''
 		return @word if word_length == 0
 		until @word.length == word_length
-			@word = Dictionary.words.sample
+			@word = Dictionary::DICTIONARY.sample
 		end
 		@word
 	end
@@ -103,7 +103,7 @@ class Game
 			system("exit")
 		end
 	end
-	
+
 
 	def display_stats
 		@player.display_stats
