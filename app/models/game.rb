@@ -106,6 +106,7 @@ class Game
 
 	def display_stats
 		@player.display_stats
+		
 	end
 
 	def self.setup(player)
