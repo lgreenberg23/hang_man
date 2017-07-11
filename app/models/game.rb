@@ -120,8 +120,7 @@ class Game
 	end
 
 	def self.setup(player)
-		puts 'how long do you want your word to be, starting at 5? Type 5 for a 5-letter
-		word, 6 for a 6-letter word, etc to 8.'
+		puts 'how long do you want your word to be, starting at 5? Type 5 for a 5-letter word, 6 for a 6-letter word, etc to 8.'
 		word_length = gets.chomp.to_i
 		self.setup(player) if word_length < 0
 		current_game = Game.new(player, word_length)
