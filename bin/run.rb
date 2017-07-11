@@ -1,9 +1,6 @@
-require_relative '../app/models/hangman_pic.rb'
-require_relative '../app/models/dictionary.rb'
-require_relative '../app/models/game.rb'
-require_relative '../app/models/user.rb'
-require 'pry'
+# !/usr/bin/env ruby
 
+require_relative "../config/environment"
 
 puts 'Welcome to Hangman! Please type in your name'
 name = gets.chomp

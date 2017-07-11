@@ -1,5 +1,5 @@
-class Dictionary
-  DICTIONARY = 
+module Dictionary
+  DICTIONARY =
 			"mine
 			separate
 			employ
@@ -983,5 +983,4 @@ class Dictionary
 			creator
 			blue
 			scribble".split
-	end
 end

@@ -2,15 +2,20 @@ require 'pry'
 require 'byebug'
 
 class Game
-	attr_accessor :player, :word_length, :word, :turns, :board
+	include HangmanPic
+	include Dictionary
+
+
+	attr_accessor :player, :word_length, :word, :turns, :board, :guesses
 
 	def initialize(player, word_length)
-		#need to set board and gallows 
+		#need to set board and gallows
 		# binding.pry
 		@player = player
 		@word_length = word_length
 		@board = "-" * word_length
-		@turns = 5
+		@turns = 8
+		@guesses = []
 	end
 
 	def set_word
@@ -26,7 +31,10 @@ class Game
 	# 	['hello', 'goliath', 'mountains', 'recede']
 	# end
 
-	def display_board
+	def display_board(level)
+		# HangmanPic.show_hangman(level)
+		system("clear")
+		show_hangman(level)
 		puts self.board.chars.join(" ")
 		#needs to also display the man
 	end
@@ -36,14 +44,14 @@ class Game
 		letter = gets.chomp
 		# debugger
 		if is_a_letter(letter)
-			if check_letter(letter) 
+			if check_letter(letter)
 				update_board(letter)
 			else
 				puts 'Nice try, sucker.'
-				# update_man - will display board
 				@turns -= 1
+				display_board(9 - turns)
 			end
-		else	
+		else
 			self.get_letter
 		end
 	end
@@ -59,8 +67,9 @@ class Game
 	end
 
 	def check_letter(letter)
-		self.word.split("").include?(letter) 
+		self.word.split("").include?(letter)
 	end
+
 
 	def update_board(letter)
 		self.word.chars.each_with_index do |char, i|
@@ -68,7 +77,7 @@ class Game
 				board[i] = letter
 			end
 		end
-		display_board
+		display_board(9 - turns)
 	end
 
 	def game_over?
@@ -121,7 +130,7 @@ class Game
 
 	def	play
 		set_word
-		self.display_board
+		self.display_board(1)
 		until self.game_over?
 			self.get_letter
 		end
