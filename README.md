@@ -4,6 +4,15 @@ The README should be well written and clear. Anyone reading your readme should k
 Welcome to Hangman! The objective of the game is to guess the letters of a given
 word before your hangman is completely drawn out.  A new limb is added for each incorrect guess.
 
+
+How to run it on your computer:
+
+In your terminal, navigate into the bin folder of 'hangman', and then type "ruby run.rb" to start the game.
+ 
+This includes all of the other files that each class depends on, as well as access to the modules that are inherited by the Game class. 
+The game begins through the 'run.rb' file, and is mostly played out through the 'game.rb' file.
+
+
 How it works:
 
 The way this works is that through the run.rb file, the user is prompted for their name, which then creates a new User object. Once the user is created a game is instantiated for that specific user, so that the game can add to the user's wins or losses. 
@@ -18,13 +27,6 @@ If the letter is in the word, it appears in its place on the board. If it is not
 After each turn, the board is checked and the number of turns remaining (based on the limbs left to be drawn out) to see if the game is over, based on whether the user has won by completing the word correctly or if the user has lost (the man has been fully hanged).
 
 At end of game, the stats (the user's wins and losses) will be displayed, and the user will be asked if they want to play another game, exit , or switch users. If they switch users, a find_or_create_by_name method will be called to determine if the user already exists and has a history of wins and losses that will be added to, or if a new user should be created. 
-
-
-How to run it on your computer:
-cd into the bin folder, and run "ruby run.rb" 
-This includes all of the other files that each class depends on, as well as access to the modules that are inherited by the Game class. 
-The game begins through the 'run.rb' file, and is mostly played out through the 'game.rb' file.
-
 
 
 
